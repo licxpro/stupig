@@ -1,6 +1,6 @@
 var React = require('react');
-
-var MyButton = function(props) {
+/*
+var ButtonView = function(props) {
   var items = props.items;
   var click = props.itemClick;
   var itemHtml = items.map(function (listItem, i) {
@@ -11,5 +11,11 @@ var MyButton = function(props) {
     <ul>{itemHtml}</ul>
   </div>;
 };
-
-module.exports = MyButton;
+*/
+class ButtonView extends React.Component {
+     
+	render(){
+	  return <div>1</div>
+	}
+};
+module.exports = ButtonView;

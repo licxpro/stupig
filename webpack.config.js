@@ -1,23 +1,26 @@
-var webpack = require('webpack');
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var path = require('path');
 
-module.exports = {
-  entry: './index.jsx',
-  output: {
-    filename: 'bundle.js'
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-  },
-  module: {
-    loaders:[
-      { test: /\.jsx$/, exclude: /node_modules/, loader: 'jsx-loader' },
-      { test: /\.js$/, exclude:/node_modules/, loader: 'babel-loader'},
-    ]
-  },
-  plugins: [
-    new CommonsChunkPlugin('init.js'),
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' })
-  ]
+var Paths = {
+	'dist':path.join(__dirname,'dist/'),
+	'index':path.join(__dirname,'src/app/index.jsx')
 };
+var config = {
+	entry:{
+		index:Paths.index
+	},
+	output:{
+		path:Paths.dist,
+		filename:"app/[name].js"
+	},
+	module:{
+		loaders:[{
+			test:/\.jsx?$/,
+			exclude:/node_modules/,
+			loader:'babel-loader',
+			query: {
+	          presets: ['react', 'es2015']
+	        }
+		}]
+	}
+};
+module.exports = config;

@@ -1,0 +1,6 @@
+class MenuBarCtl{
+	constructor(){
+
+	}
+
+}

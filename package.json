@@ -1,30 +1,24 @@
 {
-  "name": "stupig framework",
+  "name": "react7",
   "version": "1.0.0",
-  "description": "A frameword base on react. desgn by licx. 56766706@qq.com",
-  "main": "index.jsx",
+  "description": "",
+  "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --progress",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "Demo",
-    "stupig",
-    "React"
-  ],
-  "author": "licx",
-  "license": "Apache 2.0",
-  "dependencies": {
-    "babel-loader": "~5.3.2",
-    "flux": "~2.0.3",
-    "jsx-loader": "^0.13.2",
-    "object-assign": "^4.0.1",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "webpack": "^1.11.0"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "open-browser-webpack-plugin": "0.0.2",
-    "webpack-dev-server": "~1.10.1"
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }
