@@ -5,6 +5,7 @@ var Paths = {
 	'index':path.join(__dirname,'src/app/index.jsx')
 };
 var config = {
+	devtool:'eval-source-map',
 	entry:{
 		index:Paths.index
 	},

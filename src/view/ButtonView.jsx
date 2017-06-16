@@ -13,9 +13,16 @@ var ButtonView = function(props) {
 };
 */
 class ButtonView extends React.Component {
-     
+  constructor(props){
+    super(props);
+  }
 	render(){
-	  return <div>1</div>
+    let items = this.props.items;
+    let click = this.props.itemClick;
+    let itemHtml = items.map(function (listItem, i) {
+      return <li onClick={click} data-id={listItem.id} key={i}>{listItem.data}</li>;
+    });
+	  return <div>{itemHtml}</div>;
 	}
 };
 module.exports = ButtonView;

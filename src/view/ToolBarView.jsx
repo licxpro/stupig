@@ -1,25 +1,22 @@
-var React  = require('react');
+var React = require('react');
+var BaseComponent  = require('../lib/BaseComponent.jsx');
 var ButtonView = require('./ButtonView.jsx');
 // var ToolBarView = React.createClass({
 //   render: function() {
 //     return <h1>Hello World！</h1>;
 //   }
 // });
-class ToolBarView extends React.Component {
-    
-	componentDidMount(){
-	  this.props.contorller.bundleView(this);
-	  console.log("mount component");
-	}
-	componentDidUpdate(){
-	  console.log("update component");
-	}
-	componentWillUnmount(){
-	  this.props.contorller.unbundleView(this);
-	  console.log("dispose");
-	}
+class ToolBarView extends BaseComponent {
+  constructor(props){
+  	super(props);
+  	this.addItem = this.addItem.bind(this);
+  	this.itemClick = this.itemClick.bind(this);
+  	this.items=[{id:1,data:'数据加载中...'}];
+  }
+	 
 	addItem (event) {
 		console.log(event);
+		console.log(this);
 		this.props.contorller.sendAction({'actionName':'AddButtonClick','arguments':{name:'licx'},'tag':true,'sender':this});
 	}
 	itemClick(event){
@@ -30,7 +27,7 @@ class ToolBarView extends React.Component {
 		this.props.contorller.deleteItem(1);
 	}
 	render(){
-	  return <div><ButtonView />
+	  return <div><ButtonView itemClick={this.itemClick} items={this.items} />
 	  		<button onClick={this.addItem}>addItem</button>
 	  		</div>
 	}

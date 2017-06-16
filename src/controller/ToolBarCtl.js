@@ -1,8 +1,9 @@
 //var DefaultView = require('../view/ToolBarView.js');
 var BaseController = require('../lib/BaseController.js');
+var buttonList = require('../model/ToolbarModel.js');
 class ToolBarCtl extends BaseController{
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.regiester();
 	}
 	regiester(){

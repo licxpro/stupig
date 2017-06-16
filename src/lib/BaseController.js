@@ -10,7 +10,7 @@ var dispather = require('./Dispather');
 */
 class BaseController extends EventEmitter {
     
-    constructor(){
+    constructor(props){
         super();
         this._view = [];
     	this.dispather = dispather;
