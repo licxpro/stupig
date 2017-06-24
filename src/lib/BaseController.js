@@ -14,14 +14,14 @@ class BaseController extends EventEmitter {
         super();
         this._view = [];
     	this.dispather = dispather;
-    	this.regiester();
+     
 	}
 	regiester(){
 		//注册机制
     	
     }
     getViews(){
-        
+
         return this._view;
     }
 	bundleView(view){
