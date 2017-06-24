@@ -17,7 +17,7 @@ class ToolBarView extends BaseComponent {
 	addItem (event) {
 		console.log(event);
 		console.log(this);
-		this.props.contorller.sendAction({'actionName':'AddButtonClick','arguments':{name:'licx'},'tag':true,'sender':this});
+		this.props.contorller.sendAction({'actionName':'AddButtonClick','arguments':{name:'licx'},'tag':true,'sender':this},0);
 	}
 	itemClick(event){
 		//

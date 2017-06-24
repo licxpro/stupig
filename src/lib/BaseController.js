@@ -21,6 +21,7 @@ class BaseController extends EventEmitter {
     	
     }
     getViews(){
+        
         return this._view;
     }
 	bundleView(view){
@@ -31,6 +32,7 @@ class BaseController extends EventEmitter {
                 flag = false;
             }
         }
+
       	if(flag){
             this._view.push(view);
         }

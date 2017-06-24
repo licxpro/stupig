@@ -15,8 +15,7 @@ class ToolBarCtl extends BaseController{
     	});
     }
     onButtonClick(action,index){
-    	console.log(action);
-    	console.log(index);
+    	 
         /*
         
         */
@@ -32,7 +31,7 @@ class ToolBarCtl extends BaseController{
         */
         
         buttonList.addOneItem('licx');
-
+         
         this.updateView();
         //ch:执行完毕后通知执行下一个
         //eg:after you have finish your job ,you must dispather action to the next 
@@ -46,7 +45,7 @@ class ToolBarCtl extends BaseController{
         //所有的通知一块更新
         var items = buttonList.getItems();
         var views = this.getViews();
-        console.log(items);
+         console.log(views);
         views.map(function(view,i){
             view.setState({items:items});
         });

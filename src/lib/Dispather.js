@@ -10,6 +10,7 @@
 class Dispather{
 	
 	constructor(){
+
 		this._dispatherMapper={};  	//消息分发映射图
 		this._dispatherIndex=[];		//索引
 	}	
@@ -18,6 +19,9 @@ class Dispather{
 			this._dispatherMapper[actionName] = [];
 		}
 		this._dispatherMapper[actionName].push(actionHandler);
+		console.log("dispather");
+		console.log(this._dispatherMapper);
+		console.log("dispather");
 	}
 	dispather(action,index){
 		/*
@@ -30,7 +34,7 @@ class Dispather{
 		if(index){
 			start = index;
 		}
-	 
+		
 		if(!listener||!listener[start]){
 			return false;
 		}
@@ -41,5 +45,5 @@ class Dispather{
 		this.dispather(action,index);
 	}
 };
-const dispather = new Dispather();
+let dispather = new Dispather();
 module.exports = dispather;
