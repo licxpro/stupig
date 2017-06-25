@@ -15,13 +15,18 @@ var ButtonView = function(props) {
 class ButtonView extends React.Component {
   constructor(props){
     super(props);
-  }
-	render(){
-    let items = this.props.items;
-    let click = this.props.itemClick;
+    console.log("buttongView");
+    console.log(props);
+    console.log("buttongview");
+    let items = props.items;
+    let click = props.itemClick;
+    console.log(items);
     let itemHtml = items.map(function (listItem, i) {
       return <li onClick={click} data-id={listItem.id} key={i}>{listItem.data}</li>;
     });
+    this.render(itemHtml);
+  }
+	render(itemHtml){
 	  return <div>{itemHtml}</div>;
 	}
 };

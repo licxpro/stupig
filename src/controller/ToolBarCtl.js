@@ -4,7 +4,7 @@ var buttonList = require('../model/ToolbarModel.js');
 class ToolBarCtl extends BaseController{
 	constructor(props){
 		super(props);
-		this.regiester();
+		
 	}
 	regiester(){
 		//注册机制

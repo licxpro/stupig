@@ -1,8 +1,10 @@
 var React = require('react');
-
+var BaseController = require('./BaseController.js');
 class BaseComponent extends React.Component {
   constructor(props){
+  	
   	super(props);
+  	
   }
 	componentDidMount(){
 	  this.props.contorller.bundleView(this);
