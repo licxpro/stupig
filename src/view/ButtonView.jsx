@@ -18,15 +18,17 @@ class ButtonView extends React.Component {
     console.log("buttongView");
     console.log(props);
     console.log("buttongview");
-    let items = props.items;
-    let click = props.itemClick;
+    this.state = {items:props.items};
+    
+  }
+	render(){
+    let items = this.state.items;
+    let click = this.props.itemClick;
     console.log(items);
-    let itemHtml = items.map(function (listItem, i) {
+    var itemHtml = items.map(function (listItem, i) {
       return <li onClick={click} data-id={listItem.id} key={i}>{listItem.data}</li>;
     });
-    this.render(itemHtml);
-  }
-	render(itemHtml){
+  
 	  return <div>{itemHtml}</div>;
 	}
 };
