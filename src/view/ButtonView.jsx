@@ -18,11 +18,11 @@ class ButtonView extends React.Component {
     console.log("buttongView");
     console.log(props);
     console.log("buttongview");
-    this.state = {items:props.items};
+    
     
   }
 	render(){
-    let items = this.state.items;
+    let items = this.props.items;
     let click = this.props.itemClick;
     console.log(items);
     var itemHtml = items.map(function (listItem, i) {

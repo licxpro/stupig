@@ -12,7 +12,7 @@ class BaseController extends EventEmitter {
     
     constructor(props){
         super();
-        this._view = [];
+        this._view = null;
     	this.dispather = dispather;
         this.regiester();
 	}
@@ -20,30 +20,24 @@ class BaseController extends EventEmitter {
 		//注册机制
     	
     }
-    getViews(){
+    getView(){
 
         return this._view;
     }
 	bundleView(view){
         //将view绑定到controller
-        var flag = true;
-        for(var i in this._view){
-            if(this._view[i] == view){
-                flag = false;
-            }
-        }
-
-      	if(flag){
-            this._view.push(view);
-        }
+        
+        this._view = view;
+        
     }
     unbundleView(view){
         //当view被卸载的时候从这里解绑
-        for(var i in this._view){
-            if(this._view[i] == view){
-                delete this._view[i];
-            }
-        }
+        // for(var i in this._view){
+        //     if(this._view[i] == view){
+        //         delete this._view[i];
+        //     }
+        // }
+        this._view = null;
     }
     bundleDispather(dispather){
     	this.dispather = dispather;

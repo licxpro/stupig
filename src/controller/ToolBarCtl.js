@@ -44,14 +44,11 @@ class ToolBarCtl extends BaseController{
     updateView(){
         //所有的通知一块更新
         var items = buttonList.getItems();
-        var views = this.getViews();
+        var view = this.getView();
          console.log(items);
-        views.map(function(view,i){
-            console.log("views");
-            console.log(view);
-            console.log("views");
-            view.setState({items:items});
-        });
+        
+        view.setState({items:items});
+        
     }
 };
 module.exports = ToolBarCtl;

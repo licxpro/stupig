@@ -11,13 +11,13 @@ class ToolBarView extends BaseComponent {
   	super(props);
   	this.addItem = this.addItem.bind(this);
   	this.itemClick = this.itemClick.bind(this);
-  	this.items=[{id:1,data:'数据加载中...'}];
+  	this.state={items:[{id:1,data:'数据加载中...'}]};
   }
 	 
 	addItem (event) {
 		console.log(event);
 		console.log(this);
-		this.props.contorller.sendAction({'actionName':'AddButtonClick','arguments':{name:'licx'},'tag':true,'sender':this},0);
+		this.props.contorller.sendAction({'actionName':'AddButtonClick','arguments':{name:'licx'},'tag':true,'sender':this});
 	}
 	itemClick(event){
 		//
@@ -27,7 +27,7 @@ class ToolBarView extends BaseComponent {
 		this.props.contorller.deleteItem(1);
 	}
 	render(){
-	  return <div><ButtonView itemClick={this.itemClick} items={this.items} />
+	  return <div><ButtonView itemClick={this.itemClick} items={this.state.items} />
 	  		<button onClick={this.addItem}>addItem</button>
 	  		</div>
 	}
