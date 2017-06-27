@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<style type="text/css">
+	#add{
+		position: fixed;
+		left:100px;
+		top:0;
+	}
+	</style>
+	<div id="main"></div>
+	<button id="add">添加</button>
+	<script>
+		var count = 0;
+		var store = "";
+		function append(parent, text) {
+    if (typeof text === 'string') {
+      var temp = document.createElement('div');
+      temp.innerHTML = text;
+      // 防止元素太多 进行提速
+      var frag = document.createDocumentFragment();
+      while (temp.firstChild) {
+        frag.appendChild(temp.firstChild);
+      }
+      parent.appendChild(frag);
+    }
+    else {
+      parent.appendChild(text);
+    }
+  }
+		document.getElementById('add').onclick=function(){
+			var time ;
+			var addStr = "";
+			time = new Date().getTime();
+			for(var i=0;i<10000;i++){
+				count++;
+				addStr += "<li>licx"+count+"</li>"
+			}
+			append(document.getElementById("main"), addStr);
+			time = new Date().getTime()-time;
+			console.log(time);
+			console.log(store);
+		}
+	</script>
+</body>
+</html>

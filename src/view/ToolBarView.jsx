@@ -28,7 +28,7 @@ class ToolBarView extends BaseComponent {
 	}
 	render(){
 	  return <div><ButtonView itemClick={this.itemClick} items={this.state.items} />
-	  		<button onClick={this.addItem}>addItem</button>
+	  		<button  onClick={this.addItem}>addItem</button>
 	  		</div>
 	}
 };

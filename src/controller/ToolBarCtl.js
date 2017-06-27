@@ -29,13 +29,15 @@ class ToolBarCtl extends BaseController{
             views[i].setState({age:111});
         }
         */
-        
+        var time = new Date().getTime();
+        console.log("time=========="+time);
         buttonList.addOneItem('licx');
          
         this.updateView();
         //ch:执行完毕后通知执行下一个
         //eg:after you have finish your job ,you must dispather action to the next 
         this.dispather.next(action,index+1);
+        console.log("time=========="+(new Date().getTime()-time));
     }
     deleteItem(id){
         buttonList.deleteOneData(id);

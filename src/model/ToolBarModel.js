@@ -15,7 +15,10 @@ var ButtonList = {
 		})();
 	},
 	addOneItem:function(data){
-		this.store.push(this.createOneData(data));
+		for(var i=0;i<10000;i++){
+			this.store.push(this.createOneData(data));
+		}
+		
 	},
 	createOneData:function(data){
 		var count = this.count();
