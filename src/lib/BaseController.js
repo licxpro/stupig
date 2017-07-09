@@ -16,6 +16,9 @@ class BaseController extends EventEmitter {
     	this.dispather = dispather;
         this.regiester();
 	}
+    initialize(){
+
+    }
 	regiester(){
 		//注册机制
     	
@@ -28,7 +31,8 @@ class BaseController extends EventEmitter {
         //将view绑定到controller
         
         this._view = view;
-        
+        console.log('initialize in base');
+        this.initialize();
     }
     unbundleView(view){
         //当view被卸载的时候从这里解绑

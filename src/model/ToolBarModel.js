@@ -15,7 +15,7 @@ var ButtonList = {
 		})();
 	},
 	addOneItem:function(data){
-		for(var i=0;i<10000;i++){
+		for(var i=0;i<10;i++){
 			this.store.push(this.createOneData(data));
 		}
 		

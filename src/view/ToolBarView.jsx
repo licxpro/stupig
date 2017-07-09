@@ -22,8 +22,10 @@ class ToolBarView extends BaseComponent {
 	itemClick(event){
 		//
 		console.log('item click');
+		console.log(event);	
 		console.log(event.target);
-
+		console.log(event.handler);
+		console.log('item click');
 		this.props.contorller.deleteItem(1);
 	}
 	render(){

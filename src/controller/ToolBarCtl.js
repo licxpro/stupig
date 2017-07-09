@@ -6,6 +6,11 @@ class ToolBarCtl extends BaseController{
 		super(props);
 		
 	}
+    initialize(){
+        buttonList.addOneItem('licx');
+        console.log('initailize');
+        this.updateView();
+    }
 	regiester(){
 		//注册机制
 		var _this = this;

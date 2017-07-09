@@ -26,7 +26,8 @@ class ButtonView extends React.Component {
     let click = this.props.itemClick;
     console.log(items);
     var itemHtml = items.map(function (listItem, i) {
-      return <li onClick={click} data-id={listItem.id} key={i}>{listItem.data}</li>;
+
+      return <li onClick={click.bind(this,i)} data-id={listItem.id} key={i}>{listItem.data}</li>;
     });
   
 	  return <div>{itemHtml}</div>;
