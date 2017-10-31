@@ -12,16 +12,42 @@ class Dispather{
 	constructor(){
 
 		this._dispatherMapper={};  	//消息分发映射图
+		/*
+			actionHandler:{
+				_uniqueId:
+				controller:
+				actionType:
+			}
+		*/
+		/*
+			table actionName
+			//table actionHandler
+			table actionName-actionHandler-relation
+		*/
 		this._dispatherIndex=[];		//索引
-	}	
+		let  startIndex = 0;
+		this._uniqueId = function(){
+			return startIndex++;
+		}
+	}
+	getUniqueId(){
+		return this._uniqueId();
+	}
 	regiester(actionName,actionHandler){
+		//ext 额外标识
 		if(!this._dispatherMapper[actionName]){
 			this._dispatherMapper[actionName] = [];
 		}
-		this._dispatherMapper[actionName].push(actionHandler);
+		let uniqueId = this.getUniqueId();
+		let handler = {
+			uniqueId:uniqueId,
+			handler:actionHandler
+		};
+		this._dispatherMapper[actionName].push(handler);
 		console.log("dispather");
 		console.log(this._dispatherMapper);
 		console.log("dispather");
+		return uniqueId;
 	}
 	dispather(action,index){
 		/*
@@ -38,7 +64,7 @@ class Dispather{
 		if(!listener||!listener[start]){
 			return false;
 		}
-		listener[start].handleAction(action,start);
+		listener[start][handler].handleAction(action,start);
 	}
 	next(action,index){
 		
